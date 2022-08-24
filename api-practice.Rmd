@@ -13,6 +13,7 @@ library(janitor)
 library(httr)
 library(purrr)
 library(dataRetrieval)
+library(metajam)
 ```
 
 
@@ -28,5 +29,22 @@ startDate <- "2019-10-01"
 endDate <- "2020-10-05" 
 
 discharge <- readNWISdv(siteNumber,parameterCd, startDate, endDate) 
+```
+
+## Excercise 2
+
+Download the R package Metajam
+
+```{r}
+alaskan_households <- "https://knb.ecoinformatics.org/knb/d1/mn/v2/object/urn%3Auuid%3A7fc6f6db-c5ea-426a-a743-1f2edafb43b8"
+
+data_path <- "~/R/greetings/R/api_practice"
+
+#Download the data
+
+download_d1_data(alaskan_households, data_path)
+
+#Read in the data
+
 ```
 
