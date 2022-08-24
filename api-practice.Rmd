@@ -1,0 +1,30 @@
+---
+title: "Ventura River Discharge (2019-2020)"
+author: "Andre Dextre"
+date: "2022-08-24"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+library(here)
+library(janitor)
+library(httr)
+library(purrr)
+library(dataRetrieval)
+```
+
+
+## Read in the website:
+https://waterdata.usgs.gov/monitoring-location/11118500/#parameterCode=00065&period=P7D
+```{r}
+#Ventura River
+siteNumber <- "11118500"
+parameterCd <- "00060"  # Discharge
+startDate <- "2019-10-01"  
+endDate <- "2020-10-05" 
+
+discharge <- readNWISdv(siteNumber,parameterCd, startDate, endDate) 
+```
+
